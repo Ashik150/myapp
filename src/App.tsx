@@ -1,14 +1,15 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import User from './Components/User';
+import React, { useState } from "react";
+import "./App.css";
 
 function App() {
+  const [count, setCount] = useState(0);
+  const handleIncrement = () => {
+    setCount(count + 1);
+  };
   return (
     <div className="App">
-     <h1>Hello World</h1>
-     <User name = "Shahriar Khan" age = {25} lang={["Bangla","English","Hindi"]} />
-
+      <h1> Count : {count}</h1>
+      <button onClick={handleIncrement}>Increment</button>
     </div>
   );
 }
